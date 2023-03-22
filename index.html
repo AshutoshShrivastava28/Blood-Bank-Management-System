@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<body>
+ <div class="panel-body">
+                    <form action="" name="form1" method="post">
+                        <div class="row">
+                            <div class="form-group col-lg-12">
+                                <label>FirstName</label>
+                                <input type="text" name="firstname" class="form-control" required>
+                            </div>
+                            <div class="form-group col-lg-12">
+                                <label>Email</label>
+                                <input type="text" name="email" class="form-control" required>
+                            </div>
+                            <div class="form-group col-lg-12">
+                                <label>Query</label>
+                                <input type="text" name="query" class="form-control" required>
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <button type="button" onclick="save_query()">Submit</button>
+                        </div>
+
+
+                    </form>
+                </div>
+</body>
+
+
+
+<script>
+    function save_query(firstname,email,query)
+    {
+        var xmlhttp=new XMLHttpRequest();
+        xmlhttp.onreadystatechange=function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                window.location = "";
+            }
+        };
+        xmlhttp.open("GET","forajax/set_exam_type_session.php?exam_category="+ exam_category,true);
+        xmlhttp.send(null);
+    }
+</script>
+</html>
